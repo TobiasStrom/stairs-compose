@@ -59,13 +59,16 @@ fun SwitchItem(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp, horizontal = 8.dp),
+            .padding(
+                vertical = dimensionResource(id = R.dimen.dimen_half),
+                horizontal = dimensionResource(id = R.dimen.dimen_unit)
+            ),
         onClick = function,
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth(1f)
-                .padding(vertical = 8.dp, horizontal = 16.dp),
+                .padding(vertical = dimensionResource(id = R.dimen.dimen_unit), horizontal = dimensionResource(id = R.dimen.dimen_2x)),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
