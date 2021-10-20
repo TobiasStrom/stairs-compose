@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "326639865025",
+    "project_id": "stairs-app",
+    "storage_bucket": "stairs-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326639865025:android:9b17f2d891eb48d466d840",
+        "android_client_info": {
+          "package_name": "com.tobiasstrom.stairs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326639865025-e1opnvgf42e5qrcqkrs1920vl56es7d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxkmGpHHQvV5gFFBFxZVrG6BnqYJcmOfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326639865025-e1opnvgf42e5qrcqkrs1920vl56es7d1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
