@@ -156,4 +156,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling:$composeVersion")
 
     implementation(kotlin("reflect"))
+
+    // Lotti
+    implementation("com.airbnb.android:lottie-compose:4.0.0")
 }

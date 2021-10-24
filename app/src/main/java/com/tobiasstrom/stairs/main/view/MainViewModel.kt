@@ -23,24 +23,24 @@ class MainViewModel(
 
     val topBarTitle = _navigationManager.navAction.map { action ->
         when (action) {
-            is ExampleA -> _context.getString(R.string.a_title)
-            is ExampleB -> _context.getString(R.string.b_title)
-            is ExampleC -> _context.getString(R.string.c_title)
+            is HomeNav -> _context.getString(R.string.home_title)
+            is TrackingNav -> _context.getString(R.string.tracking_title)
+            is StatsNav -> _context.getString(R.string.stats_title)
             else -> ""
         }
     }
 
     val backButtonVisible = _navigationManager.navAction.map { action ->
         listOf(
-            ExampleA,
-            ExampleC
+            HomeNav,
+            StatsNav
         ).contains(action).not()
     }
 
     val bottomNavVisible = _navigationManager.navAction.map { action ->
         listOf(
-            ExampleA,
-            ExampleC
+            HomeNav,
+            StatsNav
         ).contains(action)
     }
 

@@ -144,14 +144,14 @@ fun ShortcutTopBar(navController: NavHostController, viewModel: MainViewModel) {
 fun ShortcutBottomNavigationBar(navController: NavController, onItemClicked: (BottomNavItemHolder) -> Unit) {
     val items = listOf(
         BottomNavItemHolder(
-            ExampleA,
+            HomeNav,
             Icons.Rounded.Home,
-            stringResource(R.string.a_title)
+            stringResource(R.string.home_title)
         ),
         BottomNavItemHolder(
-            ExampleC,
+            StatsNav,
             Icons.Outlined.ArrowForward,
-            stringResource(R.string.c_title)
+            stringResource(R.string.stats_title)
         )
     )
 

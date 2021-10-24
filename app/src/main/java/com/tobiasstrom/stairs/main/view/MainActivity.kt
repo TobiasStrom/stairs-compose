@@ -85,7 +85,6 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-
             MainScreen(getViewModel(), navController, bottomSheetState, scaffoldState)
         }
     }

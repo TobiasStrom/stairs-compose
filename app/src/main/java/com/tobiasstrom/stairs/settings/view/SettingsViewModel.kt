@@ -1,14 +1,14 @@
-package com.tobiasstrom.stairs.examplec.view
+package com.tobiasstrom.stairs.settings.view
 
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 import com.tobiasstrom.stairs.common.base.BaseViewModel
 import com.tobiasstrom.stairs.common.service.DarkModeService
 import com.tobiasstrom.stairs.common.service.DarkModeType
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 
-class CViewModel(
+class SettingsViewModel(
     private val _darkModeService: DarkModeService
 ) : BaseViewModel() {
 

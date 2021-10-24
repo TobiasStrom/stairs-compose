@@ -1,13 +1,13 @@
-package com.tobiasstrom.stairs.examplea.view
+package com.tobiasstrom.stairs.home.view
 
 import com.tobiasstrom.stairs.common.base.BaseViewModel
-import com.tobiasstrom.stairs.common.navigation.ExampleB
 import com.tobiasstrom.stairs.common.navigation.NavigationManager
+import com.tobiasstrom.stairs.common.navigation.TrackingNav
 
-class AViewModel(
+class HomeViewModel(
     private val _navigationManager: NavigationManager
 ) : BaseViewModel() {
-    fun navigateToB() {
-        _navigationManager.navigate(ExampleB)
+    fun navigateToTracking() {
+        _navigationManager.navigate(TrackingNav)
     }
 }

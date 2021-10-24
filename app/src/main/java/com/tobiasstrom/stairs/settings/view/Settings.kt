@@ -1,4 +1,4 @@
-package com.tobiasstrom.stairs.examplec.view
+package com.tobiasstrom.stairs.settings.view
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
@@ -13,15 +13,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.tobiasstrom.stairs.R
 import com.tobiasstrom.stairs.common.service.DarkModeService
 import com.tobiasstrom.stairs.common.service.DataStorePreferences
 import com.tobiasstrom.stairs.ui.theme.ShortcutTheme
 
 @Composable
-fun ExampleC(
-    viewModel: CViewModel
+fun Settings(
+    viewModel: SettingsViewModel
 ) {
     val isInDarkMode by viewModel.isCurrentlyInDarkMode.collectAsState(false)
     val isDarkModeFollowSystem by viewModel.isCurrentlyDarkModeFollowSystem.collectAsState(false)
@@ -32,7 +31,7 @@ fun ExampleC(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = stringResource(R.string.c_title)
+            text = stringResource(R.string.stats_title)
         )
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.dimen_4x)))
         SwitchItem(
@@ -88,8 +87,8 @@ fun SwitchItem(
 @Composable
 fun ExampleCPreview() {
     ShortcutTheme {
-        ExampleC(
-            CViewModel(
+        Settings(
+            SettingsViewModel(
                 DarkModeService(
                     LocalContext.current,
                     DataStorePreferences(LocalContext.current)
@@ -98,4 +97,3 @@ fun ExampleCPreview() {
         )
     }
 }
-

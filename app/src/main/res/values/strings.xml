@@ -15,13 +15,14 @@
     <string name="versionlock_button">Update</string>
     <string name="versionlock_text">Sorry! This app version is a little too outdated, we have been working hard to improve features and bug fixes and we want to ensure you have the smoothest experience possible. Please go to the play store and update the app!</string>
     <string name="contentdesc_logo">logo</string>
-    <string name="a_navigate">Navigate to Composable B</string>
+    <string name="home_navigate">Navigate to Tracking</string>
     <string name="b_text">This composable has back navigation in the toolbar, through the main viewmodel</string>
     <string name="c_toggleDarkMode">Dark Mode on/off</string>
     <string name="c_setDarkModeFollowSystem">Follow system-wide Dark Mode setting</string>
     <string name="toolbar_option_1">Option 1</string>
     <string name="toolbar_option_2">Option 2</string>
-    <string name="a_title">Composable A</string>
-    <string name="b_title">Composable B</string>
-    <string name="c_title">Composable C</string>
+    <string name="home_title">Home</string>
+    <string name="tracking_title">Tracking</string>
+    <string name="stats_title">Stats</string>
+    <string name="setting_tittle">Settings</string>
 </resources>

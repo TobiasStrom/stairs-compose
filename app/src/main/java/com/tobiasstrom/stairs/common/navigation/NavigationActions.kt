@@ -1,20 +1,9 @@
 package com.tobiasstrom.stairs.common.navigation
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.BadgeBox
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.NotificationAdd
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.dimensionResource
 import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavOptions
-import com.tobiasstrom.stairs.R
-import org.koin.androidx.compose.get
 
 sealed class NavigationAction {
     open val route: String = ""
@@ -64,8 +53,8 @@ object Onboarding : NavigationAction() {
     }.build()
 }
 
-object ExampleA : NavigationAction() {
-    override val route = "example_a"
+object HomeNav : NavigationAction() {
+    override val route = "home"
     override val navOptions = NavOptions.Builder().apply {
         setPopUpTo(getStartupActionRoute(), true, true)
         setLaunchSingleTop(true)
@@ -73,31 +62,17 @@ object ExampleA : NavigationAction() {
     }.build()
 }
 
-object ExampleB : NavigationAction() {
-    override val route = "example_b"
-    override val topBarActions: @Composable (RowScope.() -> Unit) = {
-        get<NavigationManager>().let { navManager ->
-            BadgeBox(
-                modifier = Modifier
-                    .padding(end = dimensionResource(R.dimen.dimen_unit))
-                    .clickable {
-                        navManager.showSnackbarMessage("Example B (NavigationAction) has top bar actions specified!") {
-                            navManager.showSnackbarMessage("You pressed \"OK\" :)")
-                        }
-                    },
-                badgeContent = { Text("!") }
-            ) {
-                Icon(
-                    Icons.Rounded.NotificationAdd,
-                    contentDescription = ""
-                )
-            }
-        }
-    }
+object TrackingNav : NavigationAction() {
+    override val route = "tracking"
+    override val navOptions = NavOptions.Builder().apply {
+        setPopUpTo(getStartupActionRoute(), true, true)
+        setLaunchSingleTop(true)
+        setRestoreState(true)
+    }.build()
 }
 
-object ExampleC : NavigationAction() {
-    override val route = "example_c"
+object StatsNav : NavigationAction() {
+    override val route = "stats"
     override val navOptions = NavOptions.Builder().apply {
         setPopUpTo(getStartupActionRoute(), true, true)
         setLaunchSingleTop(true)

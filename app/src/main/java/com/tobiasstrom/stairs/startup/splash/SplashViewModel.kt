@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import com.tobiasstrom.stairs.common.base.BaseViewModel
-import com.tobiasstrom.stairs.common.navigation.ExampleA
+import com.tobiasstrom.stairs.common.navigation.HomeNav
 import com.tobiasstrom.stairs.common.navigation.NavigationManager
 import com.tobiasstrom.stairs.common.navigation.Onboarding
 import com.tobiasstrom.stairs.common.navigation.VersionLock
@@ -26,7 +26,7 @@ class SplashViewModel(
                 !preferences.onboardingCompleted.first() ->
                     navigationManager.navigate(Onboarding)
                 else ->
-                    navigationManager.navigate(ExampleA)
+                    navigationManager.navigate(HomeNav)
             }
         }
     }

@@ -4,11 +4,12 @@ import android.app.Application
 import android.util.Log
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.tobiasstrom.stairs.common.commonModule
-import com.tobiasstrom.stairs.examplea.aModule
-import com.tobiasstrom.stairs.exampleb.bModule
-import com.tobiasstrom.stairs.examplec.cModule
+import com.tobiasstrom.stairs.home.homeModule
 import com.tobiasstrom.stairs.main.mainModule
+import com.tobiasstrom.stairs.settings.settingsModule
 import com.tobiasstrom.stairs.startup.startupModule
+import com.tobiasstrom.stairs.stats.statsModule
+import com.tobiasstrom.stairs.tracking.trackingModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
@@ -20,7 +21,7 @@ class App : Application() {
             androidContext(this@App)
             modules(
                 listOf(
-                    mainModule, commonModule, startupModule, aModule, bModule, cModule
+                    mainModule, commonModule, startupModule, homeModule, settingsModule, statsModule, trackingModule
                 )
             )
         }

@@ -8,19 +8,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.tobiasstrom.stairs.common.navigation.ExampleA
-import com.tobiasstrom.stairs.common.navigation.ExampleB
-import com.tobiasstrom.stairs.common.navigation.ExampleC
-import com.tobiasstrom.stairs.common.navigation.NavigationAction
-import com.tobiasstrom.stairs.common.navigation.Onboarding
-import com.tobiasstrom.stairs.common.navigation.Splash
-import com.tobiasstrom.stairs.common.navigation.VersionLock
-import com.tobiasstrom.stairs.examplea.view.ExampleA
-import com.tobiasstrom.stairs.exampleb.view.ExampleB
-import com.tobiasstrom.stairs.examplec.view.ExampleC
+import com.tobiasstrom.stairs.common.navigation.*
+import com.tobiasstrom.stairs.home.view.Home
 import com.tobiasstrom.stairs.startup.onboarding.Onboarding
 import com.tobiasstrom.stairs.startup.splash.Splash
 import com.tobiasstrom.stairs.startup.versionlock.VersionLock
+import com.tobiasstrom.stairs.stats.view.Stats
+import com.tobiasstrom.stairs.tracking.view.Tracking
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -45,19 +39,19 @@ fun ShortcutNavHost(navController: NavHostController, paddingValues: PaddingValu
                 )
             }
         }
-        navigation(ExampleA.route, "main") {
-            composable(ExampleA.route) {
-                ExampleA(
+        navigation(HomeNav.route, "main") {
+            composable(HomeNav.route) {
+                Home(
                     getViewModel()
                 )
             }
-            composable(ExampleB.route) {
-                ExampleB(
+            composable(TrackingNav.route) {
+                Tracking(
                     getViewModel()
                 )
             }
-            composable(ExampleC.route) {
-                ExampleC(
+            composable(StatsNav.route) {
+                Stats(
                     getViewModel()
                 )
             }

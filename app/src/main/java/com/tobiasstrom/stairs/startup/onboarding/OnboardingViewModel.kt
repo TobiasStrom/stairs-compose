@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import com.tobiasstrom.stairs.R
-import com.tobiasstrom.stairs.common.navigation.ExampleA
+import com.tobiasstrom.stairs.common.navigation.HomeNav
 import com.tobiasstrom.stairs.common.navigation.NavigationManager
 import com.tobiasstrom.stairs.common.service.AnalyticsEvent
 import com.tobiasstrom.stairs.common.service.AnalyticsService
@@ -43,7 +43,7 @@ class OnboardingViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             _preferences.setOnboardingCompleted(true)
             _analytics.logEvent(AnalyticsEvent.OnboardingComplete)
-            _navigationManager.navigate(ExampleA)
+            _navigationManager.navigate(HomeNav)
         }
     }
 }
