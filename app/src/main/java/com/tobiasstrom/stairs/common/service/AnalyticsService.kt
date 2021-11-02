@@ -5,5 +5,6 @@ interface AnalyticsService {
 }
 
 enum class AnalyticsEvent(val key: String) {
-    OnboardingComplete("onboarding_complete")
+    OnboardingComplete("onboarding_complete"),
+    StartedTracking("started_tracking")
 }

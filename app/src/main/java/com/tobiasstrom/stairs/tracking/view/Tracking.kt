@@ -12,6 +12,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.tobiasstrom.stairs.R
+import com.tobiasstrom.stairs.common.composable.ShortcutButton
 
 @Composable
 fun Tracking(
@@ -28,5 +29,8 @@ fun Tracking(
             text = stringResource(R.string.b_text),
             textAlign = TextAlign.Center
         )
+        ShortcutButton(onClick = { viewModel.startTracking() }) {
+            Text(text = viewModel.getTextForButton())
+        }
     }
 }

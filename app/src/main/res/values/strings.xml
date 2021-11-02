@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android Compose Template</string>
+    <string name="app_name">Stairs</string>
     <string name="general_retry">Retry</string>
     <string name="general_ok">OK</string>
     <string name="onboarding_1_title">Android Compose template</string>

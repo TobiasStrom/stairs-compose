@@ -37,4 +37,11 @@ class FirebaseRemoteConfigService : RemoteConfigService {
         } catch (e: Exception) {
             false
         }
+
+    override fun isChristmas(): Boolean =
+        try {
+            _remoteConfig.getBoolean("is_christmas")
+        }catch (e: Exception){
+            false
+        }
 }
