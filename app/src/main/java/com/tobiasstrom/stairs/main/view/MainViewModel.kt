@@ -15,9 +15,9 @@ class MainViewModel(
 ) : BaseViewModel() {
     val topBarVisible = _navigationManager.navAction.map { action ->
         listOf(
-            Splash,
-            VersionLock,
-            Onboarding
+            SplashNav,
+            VersionLockNav,
+            OnboardingNav
         ).contains(action).not()
     }
 

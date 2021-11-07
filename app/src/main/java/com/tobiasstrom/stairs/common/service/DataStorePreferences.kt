@@ -2,10 +2,7 @@ package com.tobiasstrom.stairs.common.service
 
 import android.content.Context
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.booleanPreferencesKey
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.core.*
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -20,6 +17,8 @@ class DataStorePreferences(
         _context.dataStore
     }
 
+
+    // Onboarding
     private val _onboardingCompletedKey = booleanPreferencesKey("APP_ONBOARDED")
     override val onboardingCompleted: Flow<Boolean> = _dataStore.data.map { prefs ->
         prefs[_onboardingCompletedKey] ?: false
@@ -31,16 +30,54 @@ class DataStorePreferences(
         }
     }
 
-    private val darkModeKey = intPreferencesKey("DARK_THEME_MODE")
+    // Dark mode
+    private val _darkModeKey = intPreferencesKey("DARK_THEME_MODE")
     override val darkMode: Flow<DarkModeType> = _dataStore.data.map { prefs ->
         DarkModeType.from(
-            prefs[darkModeKey] ?: DEFAULT_DARK_MODE.flag
+            prefs[_darkModeKey] ?: DEFAULT_DARK_MODE.flag
         )
     }
 
     override suspend fun setDarkMode(mode: DarkModeType) {
         _dataStore.edit { prefs ->
-            prefs[darkModeKey] = mode.flag
+            prefs[_darkModeKey] = mode.flag
+        }
+    }
+
+
+    // Last building
+    private val _lastBuildingKey = stringPreferencesKey("LAST_BUILDING")
+    override val lastBuilding: Flow<String?> = _dataStore.data.map { prefs ->
+        prefs[_lastBuildingKey]
+    }
+
+    override suspend fun setLastBuilding(lastBuilding: String) {
+        _dataStore.edit { prefs ->
+            prefs[_lastBuildingKey] = lastBuilding
+        }
+    }
+
+    // Start floor
+    private val _startFloorKey = intPreferencesKey("LAST_FLOOR")
+    override val startFloor: Flow<Int?> = _dataStore.data.map { prefs ->
+        prefs[_startFloorKey]
+    }
+
+    override suspend fun setStartFloor(startFloor: Int) {
+        _dataStore.edit { prefs ->
+            prefs[_startFloorKey] = startFloor
+        }
+    }
+
+    // End floor
+    private val _endFloorKey = intPreferencesKey("LAST_FLOOR")
+    override val endFloor: Flow<Int?> = _dataStore.data.map { prefs ->
+        prefs[_endFloorKey]
+    }
+
+    override suspend fun setEndFloor(endFloor: Int) {
+        _dataStore.edit { prefs ->
+            prefs[_endFloorKey] = endFloor
         }
     }
 
@@ -48,4 +85,5 @@ class DataStorePreferences(
         // Change this to set the initial state for Dark Mode
         val DEFAULT_DARK_MODE = DarkModeType.DARK_MODE_OFF
     }
+
 }

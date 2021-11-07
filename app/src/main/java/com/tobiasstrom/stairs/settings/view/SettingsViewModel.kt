@@ -2,6 +2,7 @@ package com.tobiasstrom.stairs.settings.view
 
 import androidx.lifecycle.viewModelScope
 import com.tobiasstrom.stairs.common.base.BaseViewModel
+import com.tobiasstrom.stairs.common.data.FirebaseData
 import com.tobiasstrom.stairs.common.service.DarkModeService
 import com.tobiasstrom.stairs.common.service.DarkModeType
 import kotlinx.coroutines.Dispatchers
@@ -9,7 +10,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class SettingsViewModel(
-    private val _darkModeService: DarkModeService
+    private val _darkModeService: DarkModeService,
 ) : BaseViewModel() {
 
     val isCurrentlyInDarkMode =

@@ -7,8 +7,8 @@ import kotlinx.coroutines.launch
 import com.tobiasstrom.stairs.common.base.BaseViewModel
 import com.tobiasstrom.stairs.common.navigation.HomeNav
 import com.tobiasstrom.stairs.common.navigation.NavigationManager
-import com.tobiasstrom.stairs.common.navigation.Onboarding
-import com.tobiasstrom.stairs.common.navigation.VersionLock
+import com.tobiasstrom.stairs.common.navigation.OnboardingNav
+import com.tobiasstrom.stairs.common.navigation.VersionLockNav
 import com.tobiasstrom.stairs.common.service.PreferenceService
 import com.tobiasstrom.stairs.common.service.RemoteConfigService
 
@@ -22,9 +22,9 @@ class SplashViewModel(
             remoteConfig.init()
             when {
                 remoteConfig.isVersionLocked() ->
-                    navigationManager.navigate(VersionLock)
+                    navigationManager.navigate(VersionLockNav)
                 !preferences.onboardingCompleted.first() ->
-                    navigationManager.navigate(Onboarding)
+                    navigationManager.navigate(OnboardingNav)
                 else ->
                     navigationManager.navigate(HomeNav)
             }

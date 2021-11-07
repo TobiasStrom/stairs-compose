@@ -14,7 +14,8 @@ import com.tobiasstrom.stairs.startup.onboarding.Onboarding
 import com.tobiasstrom.stairs.startup.splash.Splash
 import com.tobiasstrom.stairs.startup.versionlock.VersionLock
 import com.tobiasstrom.stairs.stats.view.Stats
-import com.tobiasstrom.stairs.tracking.view.Tracking
+import com.tobiasstrom.stairs.tracking.track.view.Tracking
+import com.tobiasstrom.stairs.tracking.trackingstats.view.TrackingStats
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -24,16 +25,16 @@ fun ShortcutNavHost(navController: NavHostController, paddingValues: PaddingValu
         navController = navController,
         startDestination = NavigationAction.getStartupActionRoute()
     ) {
-        navigation(Splash.route, NavigationAction.getStartupActionRoute()) {
-            composable(Splash.route) {
+        navigation(SplashNav.route, NavigationAction.getStartupActionRoute()) {
+            composable(SplashNav.route) {
                 Splash(
                     getViewModel()
                 )
             }
-            composable(VersionLock.route) {
+            composable(VersionLockNav.route) {
                 VersionLock()
             }
-            composable(Onboarding.route) {
+            composable(OnboardingNav.route) {
                 Onboarding(
                     getViewModel()
                 )
@@ -54,6 +55,16 @@ fun ShortcutNavHost(navController: NavHostController, paddingValues: PaddingValu
                 Stats(
                     getViewModel()
                 )
+            }
+
+        }
+
+        navigation(TrackingNav.route, "test"){
+            composable(TrackingNav.route){
+                Tracking(viewModel = getViewModel())
+            }
+            composable(TrackingStatsNav.route){
+                TrackingStats(viewModel = getViewModel())
             }
         }
 

@@ -26,7 +26,7 @@ object AppStartup : NavigationAction() {
     override val route = "startup"
 }
 
-object Splash : NavigationAction() {
+object SplashNav : NavigationAction() {
     override val route = "splash"
     override val navOptions = NavOptions.Builder().apply {
         setPopUpTo(getStartupActionRoute(), true, false)
@@ -35,7 +35,7 @@ object Splash : NavigationAction() {
     }.build()
 }
 
-object VersionLock : NavigationAction() {
+object VersionLockNav : NavigationAction() {
     override val route = "versionlock"
     override val navOptions = NavOptions.Builder().apply {
         setPopUpTo(getStartupActionRoute(), true, false)
@@ -44,7 +44,7 @@ object VersionLock : NavigationAction() {
     }.build()
 }
 
-object Onboarding : NavigationAction() {
+object OnboardingNav : NavigationAction() {
     override val route: String = "onboarding"
     override val navOptions = NavOptions.Builder().apply {
         setPopUpTo(getStartupActionRoute(), true, false)
@@ -69,6 +69,16 @@ object TrackingNav : NavigationAction() {
         setLaunchSingleTop(true)
         setRestoreState(true)
     }.build()
+}
+
+object TrackingStatsNav : NavigationAction() {
+    override val route = "trackingstats"
+    override val navOptions = NavOptions.Builder().apply {
+        setPopUpTo(getStartupActionRoute(), true, true)
+        setLaunchSingleTop(true)
+        setRestoreState(true)
+    }.build()
+
 }
 
 object StatsNav : NavigationAction() {

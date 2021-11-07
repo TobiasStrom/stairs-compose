@@ -14,6 +14,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.tobiasstrom.stairs.R
+import com.tobiasstrom.stairs.common.composable.SwitchItem
 import com.tobiasstrom.stairs.common.service.DarkModeService
 import com.tobiasstrom.stairs.common.service.DataStorePreferences
 import com.tobiasstrom.stairs.ui.theme.ShortcutTheme
@@ -45,41 +46,6 @@ fun Settings(
             value = isInDarkMode,
             enabled = !isDarkModeFollowSystem
         )
-    }
-}
-
-@Composable
-fun SwitchItem(
-    text: String,
-    function: () -> Unit,
-    value: Boolean,
-    enabled: Boolean = true
-) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(
-                vertical = dimensionResource(id = R.dimen.dimen_half),
-                horizontal = dimensionResource(id = R.dimen.dimen_unit)
-            ),
-        onClick = function,
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth(1f)
-                .padding(vertical = dimensionResource(id = R.dimen.dimen_unit), horizontal = dimensionResource(id = R.dimen.dimen_2x)),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            Text(
-                text = text
-            )
-            Switch(
-                checked = value,
-                enabled = enabled,
-                onCheckedChange = null
-            )
-        }
     }
 }
 

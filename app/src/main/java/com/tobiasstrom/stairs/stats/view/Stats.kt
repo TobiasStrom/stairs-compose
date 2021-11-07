@@ -5,6 +5,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -16,6 +17,8 @@ import com.tobiasstrom.stairs.ui.theme.ShortcutTheme
 fun Stats(
     viewModel: StatsViewModel
 ) {
+    val state = viewModel.viewState.collectAsState().value
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -23,14 +26,21 @@ fun Stats(
         Text(
             text = stringResource(R.string.stats_title)
         )
-        LazyColumn{
-            items(viewModel.items){ names ->
-                Text(text = names)
+        when(state){
+            
+            is ResultState.Loaded -> {
+                Text(text = "Hello")
+                LazyColumn{
+                    items(state.data){ names ->
+                        Text(text = names.buildingName)
+                    }
+                }
             }
         }
+
     }
 }
-
+/*
 @Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
 fun ExampleCPreview() {
@@ -42,3 +52,5 @@ fun ExampleCPreview() {
         )
     }
 }
+
+ */

@@ -9,7 +9,8 @@ import com.tobiasstrom.stairs.main.mainModule
 import com.tobiasstrom.stairs.settings.settingsModule
 import com.tobiasstrom.stairs.startup.startupModule
 import com.tobiasstrom.stairs.stats.statsModule
-import com.tobiasstrom.stairs.tracking.trackingModule
+import com.tobiasstrom.stairs.tracking.track.trackModule
+import com.tobiasstrom.stairs.tracking.trackingstats.trackingStatsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
@@ -21,7 +22,7 @@ class App : Application() {
             androidContext(this@App)
             modules(
                 listOf(
-                    mainModule, commonModule, startupModule, homeModule, settingsModule, statsModule, trackingModule
+                    mainModule, commonModule, startupModule, homeModule, settingsModule, statsModule, trackingStatsModule, trackModule,
                 )
             )
         }

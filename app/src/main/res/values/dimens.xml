@@ -10,4 +10,7 @@
     <dimen name="dimen_5x">40dp</dimen>
     <dimen name="dimen_6x">48dp</dimen>
     <dimen name="dimen_8x">64dp</dimen>
+
+
+    <dimen name="text_clock_tracker">30sp</dimen>
 </resources>

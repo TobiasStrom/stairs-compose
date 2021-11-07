@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         applicationId = "com.tobiasstrom.stairs"
-        minSdk = 23
+        minSdk = 26
         targetSdk = 31
         versionCode = versioning.versionCode()
         versionName = versioning.versionName()
@@ -115,6 +115,7 @@ dependencies {
     // Navigation
     implementation("androidx.navigation:navigation-compose:2.4.0-alpha10")
     implementation("com.google.firebase:firebase-auth:21.0.1")
+    implementation("com.google.firebase:firebase-common-ktx:20.0.0")
 
     // Accompanist
     val accompanistVersion = "0.16.1"
@@ -134,6 +135,10 @@ dependencies {
     implementation("com.google.firebase:firebase-config")
     implementation("com.google.firebase:firebase-messaging")
     implementation("com.google.firebase:firebase-crashlytics")
+
+    // Firestore
+    implementation("com.google.firebase:firebase-bom:29.0.0")
+    implementation("com.google.firebase:firebase-firestore-ktx")
 
     // Koin
     val koinVersion = "3.1.2"
